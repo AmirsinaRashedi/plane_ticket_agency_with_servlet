@@ -3,5 +3,239 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+
+
   <display-name>Archetype Created Web Application</display-name>
+
+
+  <servlet>
+    <servlet-name>airline_login</servlet-name>
+    <servlet-class>controller.airline.AirlineLoginServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>airline login</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>passenger_login</servlet-name>
+    <servlet-class>controller.passenger.PassengerLoginServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>passenger login</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>airline_dashboard</servlet-name>
+    <servlet-class>controller.airline.AirlineDashboardServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>airline dashboard</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>failed_login</servlet-name>
+    <servlet-class>controller.message.FailedLoginServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>failed login</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>airline_login_form</servlet-name>
+    <servlet-class>controller.airline.AirlineLoginFormServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>airline login form</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>passenger_login_form</servlet-name>
+    <servlet-class>controller.passenger.PassengerLoginFormServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>passenger login form</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>passenger_dashboard</servlet-name>
+    <servlet-class>controller.passenger.dashboard.PassengerDashboardServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>passenger login form</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>airline_signup_form</servlet-name>
+    <servlet-class>controller.airline.AirlineSignupFormServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>airline signup form</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>airline_signup</servlet-name>
+    <servlet-class>controller.airline.AirlineSignupServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>airline signup</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>failed_signup</servlet-name>
+    <servlet-class>controller.message.FailedSignupServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>failed signup</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>passenger_signup_form</servlet-name>
+    <servlet-class>controller.passenger.PassengerSignupFormServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>passenger signup form</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>passenger_signup</servlet-name>
+    <servlet-class>controller.passenger.PassengerSignupServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>Passenger signup</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>passenger_sort_flights</servlet-name>
+    <servlet-class>controller.passenger.dashboard.sort_flight.PassengerDashboardSortFlightsServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>sort flights</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>passenger_sort_flights_form</servlet-name>
+    <servlet-class>controller.passenger.dashboard.sort_flight.PassengerDashboardSortFlightsFormServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>sort flights form</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>no_result_error</servlet-name>
+    <servlet-class>controller.message.NoResultFoundServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>no result</param-value>
+    </init-param>
+  </servlet>
+
+
+  //-------------------------servlet mapping-----------------------------
+
+  <servlet-mapping>
+    <servlet-name>airline_dashboard</servlet-name>
+    <url-pattern>/dashboard/airline</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>passenger_login</servlet-name>
+    <url-pattern>/login/passenger</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>airline_login</servlet-name>
+    <url-pattern>/login/airline</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>failed_login</servlet-name>
+    <url-pattern>/failed/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>airline_login_form</servlet-name>
+    <url-pattern>/login/airline_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>passenger_login_form</servlet-name>
+    <url-pattern>/login/passenger_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>passenger_dashboard</servlet-name>
+    <url-pattern>/dashboard/passenger</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>airline_signup_form</servlet-name>
+    <url-pattern>/signup/airline_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>airline_signup</servlet-name>
+    <url-pattern>/signup/airline</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>failed_signup</servlet-name>
+    <url-pattern>/failed/signup</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>passenger_signup</servlet-name>
+    <url-pattern>/signup/passenger</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>passenger_signup_form</servlet-name>
+    <url-pattern>/signup/passenger_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>passenger_sort_flights</servlet-name>
+    <url-pattern>/dashboard/passenger/sort_flights</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>passenger_sort_flights_form</servlet-name>
+    <url-pattern>/dashboard/passenger/sort_flights_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>no_result_error</servlet-name>
+    <url-pattern>/failed/no_result</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
