@@ -9,4 +9,6 @@ public interface PassengerService extends BaseService<Passenger, Long> {
 
     boolean createPassenger();
 
+    boolean createPassenger(String newUsername, String newPassword, String newFirstname, String newLastname);
+
 }

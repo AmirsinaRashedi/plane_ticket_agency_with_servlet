@@ -9,4 +9,6 @@ public interface AirlineService extends BaseService<Airline, Long> {
 
     boolean createAirline();
 
+    boolean createAirline(String newName, String newPassword);
+
 }

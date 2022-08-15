@@ -80,4 +80,41 @@ public class AirlineServiceImpl extends BaseServiceImpl<Airline, Long, AirlineRe
 
     }
 
+    @Override
+    public boolean createAirline(String newName, String newPassword) {
+
+        if (newName != null && newPassword != null && !newName.isBlank() && !newPassword.isBlank() && findByName(newName) == null) {
+
+
+            try {
+
+                Airline newAirline = new Airline();
+
+                newAirline.setName(newName);
+
+                newAirline.setPassword(newPassword);
+
+                save(newAirline);
+
+            } catch (Exception e) {
+
+                System.out.println("new airline not created!");
+
+                return false;
+
+            }
+
+            return true;
+
+        } else {
+
+            System.out.println("invalid name");
+
+            return false;
+
+
+        }
+
+    }
+
 }

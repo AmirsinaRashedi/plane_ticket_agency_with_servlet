@@ -85,4 +85,45 @@ public class PassengerServiceImpl extends BaseServiceImpl<Passenger, Long, Passe
 
     }
 
+    @Override
+    public boolean createPassenger(String newUsername, String newPassword, String newFirstname, String newLastname) {
+
+        if (newUsername == null || newPassword == null || newUsername.isBlank() || newPassword.isBlank() || newFirstname == null || newLastname == null || newFirstname.isBlank() || newLastname.isBlank())
+            return false;
+
+
+        if (findByUsername(newUsername) == null) {
+
+            try {
+
+                Passenger newPassenger = new Passenger();
+
+                newPassenger.setUsername(newUsername);
+
+                newPassenger.setPassword(newPassword);
+
+                newPassenger.setFirstname(newFirstname);
+
+                newPassenger.setLastname(newLastname);
+
+                save(newPassenger);
+
+            } catch (Exception e) {
+
+                System.out.println("new Passenger not created!");
+
+                return false;
+
+            }
+
+            return true;
+
+        } else {
+
+            System.out.println("this username is taken!");
+
+            return false;
+
+        }
+    }
 }

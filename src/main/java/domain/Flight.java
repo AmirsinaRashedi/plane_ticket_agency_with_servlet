@@ -90,7 +90,7 @@ public class Flight extends BaseEntity<Long> {
                 + " Destination: " + destination
                 + " price: " + price
                 + " Available seats: " + availableSeats
-                + "Airline: " + airline;
+                + " " + airline;
 
     }
 
