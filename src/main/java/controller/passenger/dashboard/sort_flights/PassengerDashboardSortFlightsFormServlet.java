@@ -1,4 +1,4 @@
-package controller.passenger.dashboard.sort_flight;
+package controller.passenger.dashboard.sort_flights;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

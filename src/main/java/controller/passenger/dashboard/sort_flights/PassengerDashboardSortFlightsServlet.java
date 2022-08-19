@@ -1,4 +1,4 @@
-package controller.passenger.dashboard.sort_flight;
+package controller.passenger.dashboard.sort_flights;
 
 import domain.Flight;
 import util.ApplicationContext;
