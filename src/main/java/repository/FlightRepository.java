@@ -17,4 +17,8 @@ public interface FlightRepository extends BaseRepository<Flight, Long> {
 
     List<Flight> groupAllByPrice(String order);
 
+    List<String> getAllOrigins();
+
+    List<String> getAllDestinations();
+
 }

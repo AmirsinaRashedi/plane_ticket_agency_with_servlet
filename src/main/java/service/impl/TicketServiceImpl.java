@@ -104,5 +104,28 @@ public class TicketServiceImpl extends BaseServiceImpl<Ticket, Long, TicketRepos
 
     }
 
+    @Override
+    public boolean buyTicket(Passenger passenger, Flight boughtFlight) {
+
+        if (boughtFlight == null || passenger == null)
+            return false;
+
+        Ticket newTicket = new Ticket();
+
+        newTicket.setPassenger(passenger);
+
+        newTicket.setFlight(boughtFlight);
+
+        save(newTicket);
+
+        if (ApplicationContext.getFlightService().save(boughtFlight) == null)
+            return false;
+
+        boughtFlight.fillOneSeat();
+
+        return true;
+
+    }
+
 
 }

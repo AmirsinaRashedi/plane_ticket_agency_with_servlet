@@ -8,6 +8,7 @@ import service.FlightService;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class FlightServiceImpl extends BaseServiceImpl<Flight, Long, FlightRepository>
         implements FlightService {
@@ -159,5 +160,82 @@ public class FlightServiceImpl extends BaseServiceImpl<Flight, Long, FlightRepos
 
         }
 
+
     }
+
+    @Override
+    public Boolean createFlight(Airline airline, String origin, String destination, Integer price, Integer availableSeats) {
+
+        Flight newFlight = new Flight();
+
+        newFlight.setAirline(airline);
+
+        try {
+
+            newFlight.setOrigin(origin);
+
+            newFlight.setDestination(destination);
+
+            newFlight.setPrice(price);
+
+            newFlight.setAvailableSeats(availableSeats);
+
+            if (save(newFlight) != null)
+                return true;
+            else
+                return false;
+
+        } catch (Exception e) {
+
+            System.out.println("new flight not created!");
+
+            return false;
+
+        }
+
+    }
+
+    @Override
+    public List<String> getAllOrigins() {
+
+        List<String> originsWithDuplicates;
+
+        try {
+
+            originsWithDuplicates = repository.getAllOrigins();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            return null;
+
+        }
+
+
+        return originsWithDuplicates.stream().distinct().collect(Collectors.toList());
+
+    }
+
+    @Override
+    public List<String> getAllDestinations() {
+
+        List<String> destinationsWithDuplicates;
+
+        try {
+
+            destinationsWithDuplicates = repository.getAllDestinations();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            return null;
+
+        }
+
+        return destinationsWithDuplicates.stream().distinct().collect(Collectors.toList());
+
+    }
+
 }

@@ -52,4 +52,16 @@ public class FlightRepositoryImpl extends BaseRepositoryImpl<Flight, Long>
                 .getResultList();
     }
 
+    @Override
+    public List<String> getAllOrigins() {
+        return em.createQuery("select f.origin from Flight f", String.class)
+                .getResultList();
+    }
+
+    @Override
+    public List<String> getAllDestinations() {
+        return em.createQuery("select f.destination from Flight f", String.class)
+                .getResultList();
+    }
+
 }

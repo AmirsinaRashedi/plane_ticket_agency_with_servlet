@@ -20,5 +20,11 @@ public interface FlightService extends BaseService<Flight, Long> {
 
     Boolean createFlight(Airline airline);
 
+    Boolean createFlight(Airline airline, String origin, String destination, Integer price, Integer availableSeats);
+
+    List<String> getAllOrigins();
+
+    List<String> getAllDestinations();
+
 
 }
