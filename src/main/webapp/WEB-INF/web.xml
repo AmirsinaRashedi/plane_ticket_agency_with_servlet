@@ -30,7 +30,7 @@
 
   <servlet>
     <servlet-name>airline_dashboard</servlet-name>
-    <servlet-class>controller.airline.AirlineDashboardServlet</servlet-class>
+    <servlet-class>controller.airline.dashboard.AirlineDashboardServlet</servlet-class>
 
     <init-param>
       <param-name>title</param-name>
@@ -130,7 +130,7 @@
 
   <servlet>
     <servlet-name>passenger_sort_flights</servlet-name>
-    <servlet-class>controller.passenger.dashboard.sort_flight.PassengerDashboardSortFlightsServlet</servlet-class>
+    <servlet-class>controller.passenger.dashboard.sort_flights.PassengerDashboardSortFlightsServlet</servlet-class>
 
     <init-param>
       <param-name>title</param-name>
@@ -140,7 +140,7 @@
 
   <servlet>
     <servlet-name>passenger_sort_flights_form</servlet-name>
-    <servlet-class>controller.passenger.dashboard.sort_flight.PassengerDashboardSortFlightsFormServlet</servlet-class>
+    <servlet-class>controller.passenger.dashboard.sort_flights.PassengerDashboardSortFlightsFormServlet</servlet-class>
 
     <init-param>
       <param-name>title</param-name>
@@ -158,8 +158,76 @@
     </init-param>
   </servlet>
 
+  <servlet>
+    <servlet-name>filter_flights_form</servlet-name>
+    <servlet-class>controller.passenger.dashboard.filter_flights.PassengerDashboardFilterFlightsFormServlet
+    </servlet-class>
 
-  //-------------------------servlet mapping-----------------------------
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>filter flights form</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>filter_flights</servlet-name>
+    <servlet-class>controller.passenger.dashboard.filter_flights.PassengerDashboardFilterFlightsServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>filter flights</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>buy_ticket_form</servlet-name>
+    <servlet-class>controller.passenger.dashboard.ticket.PassengerDashboardBuyTicketFormServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>buy ticket form</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>buy_ticket</servlet-name>
+    <servlet-class>controller.passenger.dashboard.ticket.PassengerDashboardBuyTicketServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>buy ticket</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>view_bought_tickets</servlet-name>
+    <servlet-class>controller.passenger.dashboard.ticket.PassengerDashboardViewBoughtTicketsServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>view tickets</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>airline_add_flight</servlet-name>
+    <servlet-class>controller.airline.dashboard.add_flight.AirlineDashboardAddFlightServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>add flight</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet>
+    <servlet-name>airline_add_flight_form</servlet-name>
+    <servlet-class>controller.airline.dashboard.add_flight.AirlineDashboardAddFlightFormServlet</servlet-class>
+
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>add flight form</param-value>
+    </init-param>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>airline_dashboard</servlet-name>
@@ -235,6 +303,41 @@
   <servlet-mapping>
     <servlet-name>no_result_error</servlet-name>
     <url-pattern>/failed/no_result</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>filter_flights</servlet-name>
+    <url-pattern>/dashboard/passenger/filter_flights</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>filter_flights_form</servlet-name>
+    <url-pattern>/dashboard/passenger/filter_flights_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buy_ticket_form</servlet-name>
+    <url-pattern>/dashboard/passenger/buy_ticket_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>buy_ticket</servlet-name>
+    <url-pattern>/dashboard/passenger/buy_ticket</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>view_bought_tickets</servlet-name>
+    <url-pattern>/dashboard/passenger/view_tickets</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>airline_add_flight_form</servlet-name>
+    <url-pattern>/dashboard/airline/add_flight_form</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>airline_add_flight</servlet-name>
+    <url-pattern>/dashboard/airline/add_flight</url-pattern>
   </servlet-mapping>
 
 
